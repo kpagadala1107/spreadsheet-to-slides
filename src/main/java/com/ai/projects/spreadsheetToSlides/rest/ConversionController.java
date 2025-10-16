@@ -18,8 +18,8 @@ public class ConversionController {
     }
 
     @PostMapping("/convert")
-    public ResponseEntity<byte[]> convertSpreadsheet(@RequestParam("file") MultipartFile file) throws Exception {
-        byte[] pptData = conversionService.convertToPpt(file);
+    public ResponseEntity<byte[]> convertSpreadsheet(@RequestParam("file") MultipartFile file, @RequestParam("targetAudience") String targetAudience) throws Exception {
+        byte[] pptData = conversionService.convertToPpt(file, targetAudience);
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
         headers.setContentDispositionFormData("attachment", "presentation.pptx");
