@@ -18,7 +18,7 @@ public class CorsConfig {
 
         // Allow your React app's origin - removed trailing slashes and added more flexibility
         config.setAllowedOrigins(List.of(
-            "http://localhost:3000"
+            "http://localhost:3000", "https://spreadsheet-to-slides-ui.netlify.app"
         ));
 
         // Allow all needed methods including OPTIONS for preflight
